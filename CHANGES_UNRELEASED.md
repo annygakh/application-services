@@ -16,3 +16,5 @@
 - The `FirefoxAccount.beginOAuthFlow` method will redirect to a content page that
   forces the user to connect to the last seen user email. To avoid this behavior,
   a new `FirefoxAccount` instance with a new persisted state must be created.
+- The `FirefoxAccount.beginOAuthFlow` method does not require the `wantsKeys` argument anymore
+  as it will always do the right thing based on the requested scopes.
