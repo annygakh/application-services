@@ -29,6 +29,8 @@ data class Device(
     enum class Type {
         DESKTOP,
         MOBILE,
+        VR,
+        TV,
         UNKNOWN;
 
         companion object {
@@ -36,6 +38,8 @@ data class Device(
                 return when (msg) {
                     MsgTypes.Device.Type.DESKTOP -> DESKTOP
                     MsgTypes.Device.Type.MOBILE -> MOBILE
+                    MsgTypes.Device.Type.VR -> VR
+                    MsgTypes.Device.Type.TV -> TV
                     else -> UNKNOWN
                 }
             }
@@ -46,6 +50,8 @@ data class Device(
             return when (this) {
                 DESKTOP -> MsgTypes.Device.Type.DESKTOP.number
                 MOBILE -> MsgTypes.Device.Type.MOBILE.number
+                VR -> MsgTypes.Device.Type.VR.number
+                TV -> MsgTypes.Device.Type.TV.number
                 else -> MsgTypes.Device.Type.UNKNOWN.number
             }
         }

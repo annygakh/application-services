@@ -128,6 +128,8 @@ impl From<DeviceType> for msg_types::device::Type {
         match t {
             DeviceType::Desktop => msg_types::device::Type::Desktop,
             DeviceType::Mobile => msg_types::device::Type::Mobile,
+            DeviceType::Vr => msg_types::device::Type::Vr,
+            DeviceType::Tv => msg_types::device::Type::Tv,
             DeviceType::Unknown => msg_types::device::Type::Unknown,
         }
     }
@@ -138,6 +140,8 @@ impl From<msg_types::device::Type> for DeviceType {
         match t {
             msg_types::device::Type::Desktop => DeviceType::Desktop,
             msg_types::device::Type::Mobile => DeviceType::Mobile,
+            msg_types::device::Type::Vr => DeviceType::Vr,
+            msg_types::device::Type::Tv => DeviceType::Tv,
             msg_types::device::Type::Unknown => DeviceType::Unknown,
         }
     }
