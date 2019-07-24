@@ -191,8 +191,8 @@ def gradle_module_task(libs_tasks, module_info, deploy_environment):
     for publication in module_info['publications']:
         for artifact in publication.to_artifacts(('', '.sha1', '.md5')):
             task.with_artifacts(artifact['build_fs_path'], artifact['taskcluster_path'])
-    if deploy_environment == DeployEnvironment.RELEASE and module_info['uploadSymbols']:
-        task.with_scopes("secrets:get:project/application-services/symbols-token")
+    if module_info['uploadSymbols']:
+        # task.with_scopes("secrets:get:project/application-services/symbols-token")
         task.with_script("./automation/upload_android_symbols.sh {}".format(module_info['path']))
     return task.create()
 
